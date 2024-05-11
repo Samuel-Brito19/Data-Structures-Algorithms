@@ -29,3 +29,12 @@ class MyDictionary:
 
     def size(self):
         return len(self.items)
+
+
+test = MyDictionary()
+test.set('neymar', 'craque')
+test.set('messi', 'argentina')
+print(test.has_key('neymar'))
+print(test.keys())
+print(test.values())
+print(test.get('messi'))
