@@ -55,10 +55,10 @@ class MyDictionary:
                 break
 
     def is_empty(self):
-        return len(self) == 0
+        return self.__sizeof__ == 0
 
     def size(self):
-        return len(self.table.keys)
+        return len(self.table)
 
     def clear(self):
         self.table = {}
@@ -71,3 +71,12 @@ class MyDictionary:
         for pair in value_pairs:
             obj_string += str(pair)
         return obj_string
+
+
+x = MyDictionary()
+x.set("Gandalf", "gandalf@gmail.com")
+x.set("Neymar", "neymar@gmail.com")
+x.set("Messi", "messi@gmail.com")
+print(x.has_key("Neymar"))
+print(x.is_empty())
+print(x.size())
