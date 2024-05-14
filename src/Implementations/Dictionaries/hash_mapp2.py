@@ -17,3 +17,13 @@ class HashMap:
         for i in range(len(table_key)):
             hash_number += ord(table_key[i])
         return hash_number % 37
+
+    def hash_code(self, key):
+        return self.lose_lose_hash_code(key)
+
+    def put(self, key, value):
+        if key is not None and value is not None:
+            position = self.hash_code(key)
+            self.table[position] = ValuePair(key, value)
+            return True
+        return False
