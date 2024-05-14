@@ -27,3 +27,27 @@ class HashMap:
             self.table[position] = ValuePair(key, value)
             return True
         return False
+
+    def get(self, key):
+        value_pair = self.table.get(self.hash_code(key))
+        return None if value_pair is None else value_pair.value
+
+    def remove(self, key):
+        hash_number = self.hash_code(key)
+        value_pair = self.table[hash_number]
+        if value_pair is not None:
+            del self.table[hash_number]
+            return True
+        return False
+
+    def get_table(self):
+        return self.table
+
+    def is_empty(self):
+        return self.__sizeof__ == 0
+
+    def size(self):
+        return len(self.table)
+
+    def clear(self):
+        self.table = {}
