@@ -65,6 +65,25 @@ class LinkedList:
             return current.element
         return None
 
+    def remove(self, element):
+        index = self.index_of(element)
+        return self.remove_at(index)
+
+    def index_of(self, element):
+        current = self.head
+        for i in range(self.size()):
+            if current != None and element == current.element:
+                return i
+            current = current.next
+        return -1
+
+    def size(self):
+        return self.count
+
+    def clear(self):
+        self.head = None
+        self.count = 0
+
 
 x = LinkedList()
 x.push("Eze")
