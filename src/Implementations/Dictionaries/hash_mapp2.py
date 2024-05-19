@@ -51,3 +51,15 @@ class HashMap:
 
     def clear(self):
         self.table = {}
+
+
+x = HashMap()
+x.put("messi", "messi@gmail.com")
+x.put("mbappe", "mbappe@gmail.com")
+x.put("neymar", "neymar@gmail.com")
+print(x.hash_code("neymar"), "neymar")
+print(x.hash_code("messi"), "messi")
+print(x.hash_code("mbappe"), "mbappe")
+
+print(x.get("neymar"))
+print(x.get("saka"))
