@@ -43,11 +43,32 @@ class LinkedList:
                 current = self.head
                 node.next = current
                 self.head = node
+            else:
+                previous = self.get_element_at(index - 1)
+                current = previous.next
+                node.next = current
+                previous.next = node
+            self.count += 1
+            return True
+        return False
+
+    def remove_at(self, index):
+        if index >= 0 and index <= self.count:
+            current = self.head
+            if index == 0:
+                self.head = current.next
+            else:
+                previous = self.get_element_at(index - 1)
+                current = previous.next
+                previous.next = current.next
+            self.count += 1
+            return current.element
+        return None
 
 
 x = LinkedList()
-x.push("Nazismo")
+x.push("Eze")
 x.push("Rio")
+x.push(10)
 
-
-print(x.get_element_at(1))
+print(x.get_element_at(2))
