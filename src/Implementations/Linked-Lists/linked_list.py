@@ -21,7 +21,7 @@ class LinkedList:
             self.head = node
         else:
             current = self.head
-            while current != None:
+            while current.next != None:
                 current = current.next
             current.next = node
         self.count += 1
@@ -36,7 +36,18 @@ class LinkedList:
             return current
         return None
 
+    def insert(self, element, index):
+        if index >= 0 and index <= self.count:
+            node = Node(element)
+            if index == 0:
+                current = self.head
+                node.next = current
+                self.head = node
+
 
 x = LinkedList()
-x.push("México")
-print(x.get_element_at(0))
+x.push("Nazismo")
+x.push("Rio")
+
+
+print(x.get_element_at(1))
