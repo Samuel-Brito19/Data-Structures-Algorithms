@@ -91,3 +91,4 @@ x.push("Rio")
 x.push(10)
 
 print(x.get_element_at(2))
+print(x.index_of("Eze"))
