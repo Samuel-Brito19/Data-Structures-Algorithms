@@ -7,4 +7,4 @@ def containsDuplicate(nums):
             tuple.add(n)
         return False
 
-print(containsDuplicate([1,4,6,7]))
+print(containsDuplicate([1,4,4,7]))
